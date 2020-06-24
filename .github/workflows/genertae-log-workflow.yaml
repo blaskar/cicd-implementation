@@ -1,15 +1,13 @@
 name: Greet Everyone
 # This workflow is triggered on commits to the repository.
-on: commit
-  branches:
-    - master
+on: 
+  push:
+    branches: [master]
 defaults:
   run:
     shell: bash
 jobs:
   build:
-    # Job name is Run Script
-    - name: Keep Track of Commits
     # This job runs on Linux
       runs-on: ubuntu-latest
       steps:
