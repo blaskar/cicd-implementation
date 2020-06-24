@@ -1,3 +1,3 @@
 ls -ltr > log.log
-git whatchanged >> log.log
-git diff HEAD~'1' HEAD >> log.log
+git log pretty=tformat:<format>  >> log.log
+git diff master~1 master >> log.log
