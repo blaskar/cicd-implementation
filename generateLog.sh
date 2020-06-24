@@ -1,3 +1,2 @@
 ls -ltr > log.log
-a=$(git rev-parse HEAD)
-git diff a^ a >> log.log
+git diff $(git rev-parse HEAD)^  >> log.log
