@@ -1,2 +1,2 @@
 ls -ltr > log.log
-git diff HEAD^ >> log.log
+git log -p >> log.log
