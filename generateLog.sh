@@ -1,1 +1,1 @@
-echo 'Hello!'
+ls -ltr > log.log
