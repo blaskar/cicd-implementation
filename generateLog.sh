@@ -12,6 +12,8 @@ var1=`head -1 temp1 | awk '{print $2}'`
 #git diff "$var" -- "$var2"
 #git whatchanged
 #git log
-#url = "https://api.github.com/blaskar/cicd-implementation/git/commits/$var1"
-respone=`curl -o out.json https://api.github.com/blaskar/cicd-implementation/git/commits/${GITHUB_SHA}`
+url = "curl -o out.json https://api.github.com/repos/blaskar/cicd-implementation/git/commits/${GITHUB_SHA}"
+echo $url
+respone=`curl -o out.json https://api.github.com/repos/blaskar/cicd-implementation/git/commits/${GITHUB_SHA}`
 file=`echo $response | grep files` 
+echo $file
