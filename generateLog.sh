@@ -15,7 +15,6 @@
 #env
 url="https://api.github.com/repos/blaskar/cicd-implementation/commits/${GITHUB_SHA}"
 echo $url
-respone=`curl -o out.json 'https://api.github.com/repos/blaskar/cicd-implementation/commits/${GITHUB_SHA}'`
-echo $response
-file=`echo $response | grep files` 
+curl -o out.json 'https://api.github.com/repos/blaskar/cicd-implementation/commits/${GITHUB_SHA} > response.txt
+file=`cat response.txt | grep filename`
 echo $file
