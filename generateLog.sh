@@ -1,1 +1,1 @@
-git log -p >> log.log
+git log -p > log.log
