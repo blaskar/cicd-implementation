@@ -1,3 +1,3 @@
 
-git log -p -1 --shortstat > log.log
+git log -p -1 > log.log
 
