@@ -6,6 +6,6 @@ git log -1 > temp
 var=`head -1 temp | awk '{print $2}'`
 echo $var
 #git show --pretty="format:" --name-only "$var"
-git diff "$var" -- "$var"~1 
-git whatchanged
+git diff "$var"..--"$var"~1 
+#git whatchanged
 
