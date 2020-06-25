@@ -3,7 +3,7 @@
 #git diff -- "$var" > log.log
 #git log -1 --name-only | grep -i commit | awk {print $2} > log.l> temp.txt
 git log -1 > temp1
-git log -2 > temp2
+git rev-parse @~ > temp2
 var1=`head -1 temp1 | awk '{print $2}'`
 var2=`head -1 temp2 | awk '{print $2}'`
 echo $var1
