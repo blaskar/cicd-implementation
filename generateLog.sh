@@ -2,10 +2,13 @@
 #var=`cat temp.txt | awk '/commit/ {print $2}'`
 #git diff -- "$var" > log.log
 #git log -1 --name-only | grep -i commit | awk {print $2} > log.l> temp.txt
-git log -1 > temp
-var=`head -1 temp | awk '{print $2}'`
-echo $var
+git log -1 > temp1
+git log -2 > temp2
+var1=`head -1 temp1 | awk '{print $2}'`
+var2=`head -1 temp2 | awk '{print $2}'`
+echo $var1
+echo $var2
 #git show --pretty="format:" --name-only "$var"
-git diff "$var"..--"$var"~1 
+git diff "$var" -- "$var2"
 #git whatchanged
 
