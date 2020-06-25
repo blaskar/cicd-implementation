@@ -13,8 +13,9 @@
 #git whatchanged
 #git log
 #env
-url="https://api.github.com/repos/blaskar/cicd-implementation/commits/'${GITHUB_SHA}'"
+url="https://api.github.com/repos/blaskar/cicd-implementation/commits/${GITHUB_SHA}"
 echo $url
-#respone=`curl -o out.json https://api.github.com/repos/blaskar/cicd-implementation/commits/"${GITHUB_SHA}"`
-#file=`echo $response | grep files` 
-#echo $file
+respone=`curl -o out.json 'https://api.github.com/repos/blaskar/cicd-implementation/commits/${GITHUB_SHA}'`
+echo $response
+file=`echo $response | grep files` 
+echo $file
