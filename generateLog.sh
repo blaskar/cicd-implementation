@@ -7,4 +7,5 @@ var=`head -1 temp | awk '{print $2}'`
 echo $var
 #git show --pretty="format:" --name-only "$var"
 git diff "$var" -- "$var"~1 
+git whatchanged
 
