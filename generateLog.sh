@@ -12,9 +12,6 @@
 #git diff "$var" -- "$var2"
 #git whatchanged
 #git log
-#env
-url="https://api.github.com/repos/blaskar/cicd-implementation/commits/${GITHUB_SHA}"
-echo $url
+#url="https://api.github.com/repos/blaskar/cicd-implementation/commits/${GITHUB_SHA}"
 curl --request GET https://api.github.com/repos/blaskar/cicd-implementation/commits/${GITHUB_SHA} \ > response.txt
-file=`cat response.txt | grep filename`
-echo $file
+cat response.txt | grep filename > log.log
