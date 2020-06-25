@@ -14,4 +14,4 @@
 #git log
 #url="https://api.github.com/repos/blaskar/cicd-implementation/commits/${GITHUB_SHA}"
 curl --request GET https://api.github.com/repos/blaskar/cicd-implementation/commits/${GITHUB_SHA} \ > response.txt
-cat response.txt | grep filename | awk '{print $2}' | cut -d ',' -f 1 > log.log
+cat response.txt | grep filename | awk '{print $2}' | cut -d '"' -f 2 > log.log
