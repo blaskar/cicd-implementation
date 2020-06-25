@@ -1,3 +1,3 @@
 git log -p -1 > temp.txt
-var=head -1 temp.txt | awk $1 
+var=`tail -f temp.txt | awk '/commit/ {print $1}'`
 git diff -- "$var" > log.log
