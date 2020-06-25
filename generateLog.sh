@@ -14,4 +14,4 @@ var1=`head -1 temp1 | awk '{print $2}'`
 #git log
 #url = "https://api.github.com/blaskar/cicd-implementation/git/commits/$var1"
 respone=$(curl --location --request GET 'https://api.github.com/blaskar/cicd-implementation/git/commits/$var1')
-cat response | grep files 
+echo $response | grep files 
