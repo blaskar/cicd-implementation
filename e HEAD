@@ -1,0 +1,540 @@
+[33mcommit ec5944851d64659b1b142f45eb4969151a6e6833[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 485981a cd91f30
+Author: Baishali Laskar <Baishali.Laskar@gds.ey.com>
+Date:   Thu Jun 25 03:01:56 2020 +0530
+
+    Merge branch 'master' of https://github.com/blaskar/cicd-implementation
+
+[33mcommit 485981a324b2059203cf391f8f605e84a0bb1c46[m
+Author: Baishali Laskar <Baishali.Laskar@gds.ey.com>
+Date:   Thu Jun 25 03:00:57 2020 +0530
+
+    changed
+
+[1mdiff --git a/generateLog.sh b/generateLog.sh[m
+[1mindex a95c4b3..8e032a6 100644[m
+[1m--- a/generateLog.sh[m
+[1m+++ b/generateLog.sh[m
+[36m@@ -1,2 +1,2 @@[m
+ ls -ltr > log.log[m
+[31m-git diff HEAD^ HEAD >> log.log[m
+[32m+[m[32mgit diff HEAD^ >> log.log[m
+\ No newline at end of file[m
+
+[33mcommit cd91f305958be4d9655886ceef7d6a3251243379[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 02:50:41 2020 +0530
+
+    Update yaml
+
+[1mdiff --git a/.github/workflows/generate-log.yaml b/.github/workflows/generate-log.yaml[m
+[1mindex b74f878..79740c2 100644[m
+[1m--- a/.github/workflows/generate-log.yaml[m
+[1m+++ b/.github/workflows/generate-log.yaml[m
+[36m@@ -8,6 +8,7 @@[m [mjobs:[m
+   build:[m
+     runs-on: ubuntu-latest[m
+     steps:[m
+[32m+[m[32m    - uses: actions/checkout@v2[m
+     - run: sh generateLog.sh[m
+     - uses: actions/upload-artifact@v2[m
+       with:[m
+
+[33mcommit e2a395453a82f98c5bf37a086b97b2216bc17962[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 02:48:03 2020 +0530
+
+    Update file
+
+[33mcommit 1e21f84c8f446912df9b7efb87d02915854e0323[m
+Author: Baishali Laskar <Baishali.Laskar@gds.ey.com>
+Date:   Thu Jun 25 02:46:23 2020 +0530
+
+    Added in file2
+
+[1mdiff --git a/file2.txt b/file2.txt[m
+[1mindex 8b13789..318cd59 100644[m
+[1m--- a/file2.txt[m
+[1m+++ b/file2.txt[m
+[36m@@ -1 +1 @@[m
+[31m-[m
+[32m+[m[32mI am in file2[m
+
+[33mcommit ce12370e4c922ebb3d952e803ce970700c33e6ec[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 02:41:17 2020 +0530
+
+    Update generate-log.yaml
+
+[1mdiff --git a/.github/workflows/generate-log.yaml b/.github/workflows/generate-log.yaml[m
+[1mindex 79740c2..b74f878 100644[m
+[1m--- a/.github/workflows/generate-log.yaml[m
+[1m+++ b/.github/workflows/generate-log.yaml[m
+[36m@@ -8,7 +8,6 @@[m [mjobs:[m
+   build:[m
+     runs-on: ubuntu-latest[m
+     steps:[m
+[31m-    - uses: actions/checkout@v2[m
+     - run: sh generateLog.sh[m
+     - uses: actions/upload-artifact@v2[m
+       with:[m
+
+[33mcommit a52a29ab807ee0e060511d57ace766d9e3ec6cac[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 02:39:57 2020 +0530
+
+    Update generateLog.sh
+
+[1mdiff --git a/generateLog.sh b/generateLog.sh[m
+[1mindex f62c0bf..a95c4b3 100644[m
+[1m--- a/generateLog.sh[m
+[1m+++ b/generateLog.sh[m
+[36m@@ -1,2 +1,2 @@[m
+ ls -ltr > log.log[m
+[31m-git diff master~1 master >> log.log[m
+[32m+[m[32mgit diff HEAD^ HEAD >> log.log[m
+
+[33mcommit 9694e0174219bc8fbc74b754ed4596378fdeb8f4[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 02:35:56 2020 +0530
+
+    Update generateLog.sh
+
+[1mdiff --git a/generateLog.sh b/generateLog.sh[m
+[1mindex 283121f..f62c0bf 100644[m
+[1m--- a/generateLog.sh[m
+[1m+++ b/generateLog.sh[m
+[36m@@ -1,3 +1,2 @@[m
+ ls -ltr > log.log[m
+[31m-git log pretty=tformat:<format>  >> log.log[m
+[31m-git diff master~1 master >> log.log[m
+\ No newline at end of file[m
+[32m+[m[32mgit diff master~1 master >> log.log[m
+
+[33mcommit 257c48479e1d8a545b5e11917437c00bcdebadca[m
+Author: Baishali Laskar <Baishali.Laskar@gds.ey.com>
+Date:   Thu Jun 25 02:33:48 2020 +0530
+
+    Change HEAD to master
+
+[1mdiff --git a/generateLog.sh b/generateLog.sh[m
+[1mindex 8ec12fa..283121f 100644[m
+[1m--- a/generateLog.sh[m
+[1m+++ b/generateLog.sh[m
+[36m@@ -1,3 +1,3 @@[m
+ ls -ltr > log.log[m
+[31m-git whatchanged >> log.log[m
+[31m-git diff HEAD~'1' HEAD >> log.log[m
+[32m+[m[32mgit log pretty=tformat:<format>  >> log.log[m
+[32m+[m[32mgit diff master~1 master >> log.log[m
+\ No newline at end of file[m
+
+[33mcommit 5f0a6b79605ef5875794dffc03cc0fc5a335dcb1[m
+Author: Baishali Laskar <Baishali.Laskar@gds.ey.com>
+Date:   Thu Jun 25 02:30:34 2020 +0530
+
+    Script Changed
+
+[1mdiff --git a/generateLog.sh b/generateLog.sh[m
+[1mindex b7e0164..8ec12fa 100644[m
+[1m--- a/generateLog.sh[m
+[1m+++ b/generateLog.sh[m
+[36m@@ -1,3 +1,3 @@[m
+ ls -ltr > log.log[m
+ git whatchanged >> log.log[m
+[31m-git diff HEAD~1 HEAD >> log.log[m
+[32m+[m[32mgit diff HEAD~'1' HEAD >> log.log[m
+
+[33mcommit 5e2051d9af7233c5f5cfb4b0d3371528d37bec97[m
+Author: Baishali Laskar <Baishali.Laskar@gds.ey.com>
+Date:   Thu Jun 25 02:20:24 2020 +0530
+
+    Updated file1.txt
+
+[1mdiff --git a/file1.txt b/file1.txt[m
+[1mindex 59e1bf3..de4bfed 100644[m
+[1m--- a/file1.txt[m
+[1m+++ b/file1.txt[m
+[36m@@ -1 +1,2 @@[m
+ This is new changes.[m
+[32m+[m[32mI have been coding since yesterday.[m
+
+[33mcommit 0cf414272fafc28fc3f5a370b0288972823831f3[m
+Author: Baishali Laskar <Baishali.Laskar@gds.ey.com>
+Date:   Thu Jun 25 02:14:34 2020 +0530
+
+    Update script
+
+[1mdiff --git a/generateLog.sh b/generateLog.sh[m
+[1mindex cf56eaa..b7e0164 100644[m
+[1m--- a/generateLog.sh[m
+[1m+++ b/generateLog.sh[m
+[36m@@ -1,3 +1,3 @@[m
+ ls -ltr > log.log[m
+ git whatchanged >> log.log[m
+[31m-git "!sh -c 'if [ $# -eq 0 ] ; then git diff HEAD~1 HEAD ; else git diff HEAD~`expr $1 + 1` HEAD~$1 ; fi' -" >> log.log[m
+[32m+[m[32mgit diff HEAD~1 HEAD >> log.log[m
+
+[33mcommit 25ed98864974f323d25abf6ae7141ee818d67fa3[m
+Merge: 627ce88 713bc62
+Author: Baishali Laskar <Baishali.Laskar@gds.ey.com>
+Date:   Thu Jun 25 00:57:03 2020 +0530
+
+    Merge branch 'master' of https://github.com/blaskar/cicd-implementation
+
+[33mcommit 713bc629670a5b9ea2ca3a65c201dfd366fe7725[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 00:50:40 2020 +0530
+
+    Update generateLog.sh
+
+[1mdiff --git a/generateLog.sh b/generateLog.sh[m
+[1mindex 7465127..cf56eaa 100644[m
+[1m--- a/generateLog.sh[m
+[1m+++ b/generateLog.sh[m
+[36m@@ -1,2 +1,3 @@[m
+ ls -ltr > log.log[m
+[31m-git diff >> log.log[m
+[32m+[m[32mgit whatchanged >> log.log[m
+[32m+[m[32mgit "!sh -c 'if [ $# -eq 0 ] ; then git diff HEAD~1 HEAD ; else git diff HEAD~`expr $1 + 1` HEAD~$1 ; fi' -" >> log.log[m
+
+[33mcommit a5ff4aceb346c5edc9bba961d5226be4f7c28cd9[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 00:45:23 2020 +0530
+
+    Update generateLog.sh
+
+[1mdiff --git a/generateLog.sh b/generateLog.sh[m
+[1mindex 103e461..7465127 100644[m
+[1m--- a/generateLog.sh[m
+[1m+++ b/generateLog.sh[m
+[36m@@ -1,2 +1,2 @@[m
+ ls -ltr > log.log[m
+[31m-git diff > log.log[m
+[32m+[m[32mgit diff >> log.log[m
+
+[33mcommit 0f8cff6c244dd256e7cb349928289b7e33a26fa6[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 00:38:29 2020 +0530
+
+    Update generateLog.sh
+
+[1mdiff --git a/generateLog.sh b/generateLog.sh[m
+[1mindex 1fedac8..103e461 100644[m
+[1m--- a/generateLog.sh[m
+[1m+++ b/generateLog.sh[m
+[36m@@ -1 +1,2 @@[m
+ ls -ltr > log.log[m
+[32m+[m[32mgit diff > log.log[m
+
+[33mcommit 027b6379a2b2b47ecf6463b761e449033b5575b6[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 00:38:16 2020 +0530
+
+    Update generateLog.sh
+
+[1mdiff --git a/generateLog.sh b/generateLog.sh[m
+[1mindex 027b727..1fedac8 100644[m
+[1m--- a/generateLog.sh[m
+[1m+++ b/generateLog.sh[m
+[36m@@ -1 +1 @@[m
+[31m-echo 'Hello!'[m
+[32m+[m[32mls -ltr > log.log[m
+
+[33mcommit 29e77d7a90628d3e9da04f70b0d497f398b175f4[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 00:09:37 2020 +0530
+
+    Update generate-log.yaml
+
+[1mdiff --git a/.github/workflows/generate-log.yaml b/.github/workflows/generate-log.yaml[m
+[1mindex 379c745..79740c2 100644[m
+[1m--- a/.github/workflows/generate-log.yaml[m
+[1m+++ b/.github/workflows/generate-log.yaml[m
+[36m@@ -9,7 +9,7 @@[m [mjobs:[m
+     runs-on: ubuntu-latest[m
+     steps:[m
+     - uses: actions/checkout@v2[m
+[31m-    - run: sh executeForLogs.sh[m
+[32m+[m[32m    - run: sh generateLog.sh[m
+     - uses: actions/upload-artifact@v2[m
+       with:[m
+         name: log_artifact[m
+
+[33mcommit 51574886e7eb237833231d09a29455e8d7b645ab[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 00:08:20 2020 +0530
+
+    Delete genertae-log-workflow.yaml
+
+[1mdiff --git a/.github/workflows/genertae-log-workflow.yaml b/.github/workflows/genertae-log-workflow.yaml[m
+[1mdeleted file mode 100644[m
+[1mindex 8a2b299..0000000[m
+[1m--- a/.github/workflows/genertae-log-workflow.yaml[m
+[1m+++ /dev/null[m
+[36m@@ -1,21 +0,0 @@[m
+[31m-name: Greet Everyone[m
+[31m-# This workflow is triggered on commits to the repository.[m
+[31m-on: [m
+[31m-  push:[m
+[31m-    branches: [master][m
+[31m-defaults:[m
+[31m-  run:[m
+[31m-    shell: bash[m
+[31m-jobs:[m
+[31m-  build:[m
+[31m-    # This job runs on Linux[m
+[31m-      runs-on: ubuntu-latest[m
+[31m-      steps:[m
+[31m-        # This step runs the script[m
+[31m-        - name: Run Script[m
+[31m-          run:  sh generateLog.sh[m
+[31m-          id: run_script[m
+[31m-        # This step prints an output (time) from the previous step's action.[m
+[31m-        - name: Echo the script's run time[m
+[31m-          run: echo 'The time was ${{ steps.run_script.outputs.time }}.'[m
+[31m-   [m
+
+[33mcommit 55bc78eb825842d3afb77b3717739a0b97cd4eaa[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 00:06:45 2020 +0530
+
+    Create generate-log.yaml
+
+[1mdiff --git a/.github/workflows/generate-log.yaml b/.github/workflows/generate-log.yaml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..379c745[m
+[1m--- /dev/null[m
+[1m+++ b/.github/workflows/generate-log.yaml[m
+[36m@@ -0,0 +1,16 @@[m
+[32m+[m[32mname: log artifact[m
+[32m+[m[32mon:[m
+[32m+[m[32m  push:[m
+[32m+[m[32m    branches: [ master ][m
+[32m+[m[32m  pull_request:[m
+[32m+[m[32m    branches: [ master ][m
+[32m+[m[32mjobs:[m
+[32m+[m[32m  build:[m
+[32m+[m[32m    runs-on: ubuntu-latest[m
+[32m+[m[32m    steps:[m
+[32m+[m[32m    - uses: actions/checkout@v2[m
+[32m+[m[32m    - run: sh executeForLogs.sh[m
+[32m+[m[32m    - uses: actions/upload-artifact@v2[m
+[32m+[m[32m      with:[m
+[32m+[m[32m        name: log_artifact[m
+[32m+[m[32m        path: ./log.log[m
+
+[33mcommit 5b14d129d061cc698faa38739b3949ce296521f1[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 00:04:15 2020 +0530
+
+    Update genertae-log-workflow.yaml
+
+[1mdiff --git a/.github/workflows/genertae-log-workflow.yaml b/.github/workflows/genertae-log-workflow.yaml[m
+[1mindex 0cc48d7..8a2b299 100644[m
+[1m--- a/.github/workflows/genertae-log-workflow.yaml[m
+[1m+++ b/.github/workflows/genertae-log-workflow.yaml[m
+[36m@@ -13,9 +13,7 @@[m [mjobs:[m
+       steps:[m
+         # This step runs the script[m
+         - name: Run Script[m
+[31m-          run: |[m
+[31m-            chmod 755 generateLog.sh[m
+[31m-            sh ./generateLog.sh[m
+[32m+[m[32m          run:  sh generateLog.sh[m
+           id: run_script[m
+         # This step prints an output (time) from the previous step's action.[m
+         - name: Echo the script's run time[m
+
+[33mcommit 40a2f425d210b6ab713c3c74cdbaddce7b517f57[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Thu Jun 25 00:01:28 2020 +0530
+
+    Update genertae-log-workflow.yaml
+
+[1mdiff --git a/.github/workflows/genertae-log-workflow.yaml b/.github/workflows/genertae-log-workflow.yaml[m
+[1mindex 478d580..0cc48d7 100644[m
+[1m--- a/.github/workflows/genertae-log-workflow.yaml[m
+[1m+++ b/.github/workflows/genertae-log-workflow.yaml[m
+[36m@@ -13,7 +13,9 @@[m [mjobs:[m
+       steps:[m
+         # This step runs the script[m
+         - name: Run Script[m
+[31m-          run: sh ./generateLog.sh[m
+[32m+[m[32m          run: |[m
+[32m+[m[32m            chmod 755 generateLog.sh[m
+[32m+[m[32m            sh ./generateLog.sh[m
+           id: run_script[m
+         # This step prints an output (time) from the previous step's action.[m
+         - name: Echo the script's run time[m
+
+[33mcommit 9d42df2f218df9935decf70fa3f436c4abaaa03b[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Wed Jun 24 23:37:32 2020 +0530
+
+    Update genertae-log-workflow.yaml
+
+[1mdiff --git a/.github/workflows/genertae-log-workflow.yaml b/.github/workflows/genertae-log-workflow.yaml[m
+[1mindex cbf8561..478d580 100644[m
+[1m--- a/.github/workflows/genertae-log-workflow.yaml[m
+[1m+++ b/.github/workflows/genertae-log-workflow.yaml[m
+[36m@@ -13,7 +13,7 @@[m [mjobs:[m
+       steps:[m
+         # This step runs the script[m
+         - name: Run Script[m
+[31m-          run: ./generateLog.sh[m
+[32m+[m[32m          run: sh ./generateLog.sh[m
+           id: run_script[m
+         # This step prints an output (time) from the previous step's action.[m
+         - name: Echo the script's run time[m
+
+[33mcommit 8f268e19eb97452ede1999c63eb93ab58edc65b2[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Wed Jun 24 23:35:10 2020 +0530
+
+    Update generateLog.sh
+
+[1mdiff --git a/generateLog.sh b/generateLog.sh[m
+[1mindex 8b13789..027b727 100644[m
+[1m--- a/generateLog.sh[m
+[1m+++ b/generateLog.sh[m
+[36m@@ -1 +1 @@[m
+[31m-[m
+[32m+[m[32mecho 'Hello!'[m
+
+[33mcommit b879874c9b655ce82519086bd5f4674dcf706c8c[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Wed Jun 24 23:33:06 2020 +0530
+
+    Update genertae-log-workflow.yaml
+
+[1mdiff --git a/.github/workflows/genertae-log-workflow.yaml b/.github/workflows/genertae-log-workflow.yaml[m
+[1mindex 623e0bc..cbf8561 100644[m
+[1m--- a/.github/workflows/genertae-log-workflow.yaml[m
+[1m+++ b/.github/workflows/genertae-log-workflow.yaml[m
+[36m@@ -1,15 +1,13 @@[m
+ name: Greet Everyone[m
+ # This workflow is triggered on commits to the repository.[m
+[31m-on: commit[m
+[31m-  branches:[m
+[31m-    - master[m
+[32m+[m[32mon:[m[41m [m
+[32m+[m[32m  push:[m
+[32m+[m[32m    branches: [master][m
+ defaults:[m
+   run:[m
+     shell: bash[m
+ jobs:[m
+   build:[m
+[31m-    # Job name is Run Script[m
+[31m-    - name: Keep Track of Commits[m
+     # This job runs on Linux[m
+       runs-on: ubuntu-latest[m
+       steps:[m
+
+[33mcommit 627ce8811a134609236f6b9ec8c3db2017bc3f26[m
+Author: Baishali Laskar <Baishali.Laskar@gds.ey.com>
+Date:   Wed Jun 24 23:25:34 2020 +0530
+
+    File Changes!
+
+[1mdiff --git a/file1.txt b/file1.txt[m
+[1mindex 8b13789..59e1bf3 100644[m
+[1m--- a/file1.txt[m
+[1m+++ b/file1.txt[m
+[36m@@ -1 +1 @@[m
+[31m-[m
+[32m+[m[32mThis is new changes.[m
+
+[33mcommit 7cf21619e97548b17a4be55b74646cafd3895c90[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Wed Jun 24 23:01:19 2020 +0530
+
+    Create generateLog.sh
+
+[1mdiff --git a/generateLog.sh b/generateLog.sh[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8b13789[m
+[1m--- /dev/null[m
+[1m+++ b/generateLog.sh[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m
+
+[33mcommit 21db6fd582fd43fc50f2db2ff343256afeabcc97[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Wed Jun 24 22:59:25 2020 +0530
+
+    Create genertae-log-workflow.yaml
+
+[1mdiff --git a/.github/workflows/genertae-log-workflow.yaml b/.github/workflows/genertae-log-workflow.yaml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..623e0bc[m
+[1m--- /dev/null[m
+[1m+++ b/.github/workflows/genertae-log-workflow.yaml[m
+[36m@@ -0,0 +1,23 @@[m
+[32m+[m[32mname: Greet Everyone[m
+[32m+[m[32m# This workflow is triggered on commits to the repository.[m
+[32m+[m[32mon: commit[m
+[32m+[m[32m  branches:[m
+[32m+[m[32m    - master[m
+[32m+[m[32mdefaults:[m
+[32m+[m[32m  run:[m
+[32m+[m[32m    shell: bash[m
+[32m+[m[32mjobs:[m
+[32m+[m[32m  build:[m
+[32m+[m[32m    # Job name is Run Script[m
+[32m+[m[32m    - name: Keep Track of Commits[m
+[32m+[m[32m    # This job runs on Linux[m
+[32m+[m[32m      runs-on: ubuntu-latest[m
+[32m+[m[32m      steps:[m
+[32m+[m[32m        # This step runs the script[m
+[32m+[m[32m        - name: Run Script[m
+[32m+[m[32m          run: ./generateLog.sh[m
+[32m+[m[32m          id: run_script[m
+[32m+[m[32m        # This step prints an output (time) from the previous step's action.[m
+[32m+[m[32m        - name: Echo the script's run time[m
+[32m+[m[32m          run: echo 'The time was ${{ steps.run_script.outputs.time }}.'[m
+[32m+[m[41m   [m
+
+[33mcommit d49764f15c5d98df6d116c73f4627f8e6eeb0568[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Wed Jun 24 16:06:06 2020 +0530
+
+    Create file2.txt
+
+[1mdiff --git a/file2.txt b/file2.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8b13789[m
+[1m--- /dev/null[m
+[1m+++ b/file2.txt[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m
+
+[33mcommit 39f53acad0175351e91df2384e90fd5bc257e9a2[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Wed Jun 24 16:05:33 2020 +0530
+
+    Create file1.txt
+
+[1mdiff --git a/file1.txt b/file1.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8b13789[m
+[1m--- /dev/null[m
+[1m+++ b/file1.txt[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m
+
+[33mcommit 7947e77280a77a05a497457ebdecb89aa969ceda[m
+Author: blaskar <30313971+blaskar@users.noreply.github.com>
+Date:   Fri Jun 19 21:38:03 2020 +0530
+
+    Initial commit
+
+[1mdiff --git a/README.md b/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..145f7be[m
+[1m--- /dev/null[m
+[1m+++ b/README.md[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32m# cicd-implementation[m
+\ No newline at end of file[m
