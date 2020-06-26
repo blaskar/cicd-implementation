@@ -10,5 +10,5 @@ jobs:
     - run: sh generateLog.sh
     - uses: actions/upload-artifact@v2
       with:
-        name: log_artifact
+        name: commitLog_artifact
         path: ./commitLog.log
