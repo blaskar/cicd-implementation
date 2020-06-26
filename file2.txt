@@ -1,2 +1,3 @@
 I am in file2
 I am adding line.
+cool
