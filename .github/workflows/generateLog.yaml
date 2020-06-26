@@ -1,8 +1,6 @@
-name: log artifact
+name: Track Commits
 on:
   push:
-    branches: [ master ]
-  pull_request:
     branches: [ master ]
 jobs:
   build:
@@ -13,4 +11,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: log_artifact
-        path: ./log.log
+        path: ./commitLog.log
