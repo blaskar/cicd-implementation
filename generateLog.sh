@@ -16,7 +16,7 @@
 echo "Latest Commit: $GITHUB_SHA " > commitLog.log
 printf "%s\nFiles changed:%s\n" >> commitLog.log
 curl --request GET https://api.github.com/repos/blaskar/cicd-implementation/commits/${GITHUB_SHA} \ > response.txt
+cat response.txt | grep -w filename | awk '{printf  $2}' | cut -d '"' -f 2 | tr "@@" '\n' >> commitLog.log
 #cat response.txt | grep -w 'filename\|status' >> commitLog.log
-cat response.txt | grep -w 'filename\|status' | awk '{printf  $2, $4}' | cut -d '"' -f 2 | tr "@@" '\n' >> commitLog.log
 #cat response.txt | grep status | awk '{printf "%s\n", $2, "%s\n"}' | cut -d '"' -f 2 | tr "@@" '\n' >> log.log
 
